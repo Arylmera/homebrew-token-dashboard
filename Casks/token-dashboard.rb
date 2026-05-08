@@ -1,6 +1,6 @@
 cask "token-dashboard" do
   version "3.0.5"
-  sha256 "59f9bc4ca964a3a0520ea04d082cc4ab203756b07ca49f95f01eb585e5ec054f"
+  sha256 "97c04d38ac3a28a045ecb604b5a94f5361430bf2d369f0747d24f92659f9085c"
 
   url "https://github.com/Arylmera/Token-Dashboard/releases/download/v#{version}/token-dashboard-#{version}-macos-arm64.dmg"
   name "Token Dashboard"
