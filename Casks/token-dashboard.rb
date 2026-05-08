@@ -1,6 +1,6 @@
 cask "token-dashboard" do
-  version "3.0.0"
-  sha256 "eeb286f2d7a56ff5e8f818a6936035ed57d3e1761ec2099b7f62a60f311b1e49"
+  version "3.0.1"
+  sha256 "9ceff157465c3d3d16757389de8751f3f220452c2f11406630a94ae3ae46419b"
 
   url "https://github.com/Arylmera/Token-Dashboard/releases/download/v#{version}/token-dashboard-#{version}-macos-arm64.dmg"
   name "Token Dashboard"
@@ -16,6 +16,16 @@ cask "token-dashboard" do
   depends_on macos: ">= :big_sur"
 
   app "Token Dashboard.app"
+
+  # The DMG isn't signed with an Apple Developer ID (only ad-hoc), so even
+  # though Homebrew Cask normally strips quarantine on install, recent
+  # macOS releases re-attach it. Strip explicitly so first launch doesn't
+  # hit the "damaged and can't be opened" Gatekeeper dialog.
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Token Dashboard.app"],
+                   sudo: false
+  end
 
   zap trash: [
     "~/.claude/token-dashboard.db",
