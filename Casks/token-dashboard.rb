@@ -1,8 +1,8 @@
 cask "token-dashboard" do
-  version "3.1.0"
-  sha256 "3cbf38568c62d0d85287d90cdc07596220442e0658744ee7003d6a81ccaba708"
+  version "4.0.8"
+  sha256 "23e26048c5c3c590a13074a1d13d6d6b822c373758987000cac7e2b3799f0f80"
 
-  url "https://github.com/Arylmera/Token-Dashboard/releases/download/v#{version}/token-dashboard-#{version}-macos-arm64.dmg"
+  url "https://github.com/Arylmera/Token-Dashboard/releases/download/v#{version}/Token.Dashboard_#{version}_x64.dmg"
   name "Token Dashboard"
   desc "Local dashboard for tracking Claude Code token usage and costs"
   homepage "https://github.com/Arylmera/Token-Dashboard"
@@ -12,15 +12,10 @@ cask "token-dashboard" do
     strategy :github_latest
   end
 
-  depends_on arch: :arm64
   depends_on macos: ">= :big_sur"
 
   app "Token Dashboard.app"
 
-  # The DMG isn't signed with an Apple Developer ID (only ad-hoc), so even
-  # though Homebrew Cask normally strips quarantine on install, recent
-  # macOS releases re-attach it. Strip explicitly so first launch doesn't
-  # hit the "damaged and can't be opened" Gatekeeper dialog.
   postflight do
     system_command "/usr/bin/xattr",
                    args: ["-dr", "com.apple.quarantine", "#{appdir}/Token Dashboard.app"],
