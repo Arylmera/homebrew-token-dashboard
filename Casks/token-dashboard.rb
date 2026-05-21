@@ -1,6 +1,6 @@
 cask "token-dashboard" do
-  version "4.1.1"
-  sha256 "6b1c69b0b34ea29a0e281837a25f01f4f4d422ec31d72f9100efbe7ce417fd9f"
+  version "4.1.2"
+  sha256 "accd7f443e7d0e2040ce538f68d326cbaf9825e35f8a50d71ca518192537f5d4"
 
   url "https://github.com/Arylmera/Token-Dashboard/releases/download/v#{version}/Token.Dashboard_#{version}_x64.dmg"
   name "Token Dashboard"
