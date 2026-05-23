@@ -1,8 +1,11 @@
 cask "token-dashboard" do
-  version "4.1.2"
-  sha256 "accd7f443e7d0e2040ce538f68d326cbaf9825e35f8a50d71ca518192537f5d4"
+  arch arm: "aarch64", intel: "x64"
 
-  url "https://github.com/Arylmera/Token-Dashboard/releases/download/v#{version}/Token.Dashboard_#{version}_x64.dmg"
+  version "4.1.3"
+  sha256 arm:   "f60312bd622b9b6b0da7f1561ffd36ea0bc61589e2332b58cdd602fdc4e720a7",
+         intel: "349b82616050a3d0f294735bd7681f005b479239f63adfbf306d4437820ef5e0"
+
+  url "https://github.com/Arylmera/Token-Dashboard/releases/download/v#{version}/Token.Dashboard_#{version}_#{arch}.dmg"
   name "Token Dashboard"
   desc "Local dashboard for tracking Claude Code token usage and costs"
   homepage "https://github.com/Arylmera/Token-Dashboard"
