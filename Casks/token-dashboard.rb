@@ -1,9 +1,9 @@
 cask "token-dashboard" do
   arch arm: "aarch64", intel: "x64"
 
-  version "5.1.3"
-  sha256 arm:   "27140da3eb90ef556be8e52a0084f36da64a7a7e1d8ecb39f265a4e1be26dd4b",
-         intel: "13ec1a8ec9d790534417368c8fba177345d4d8f3a667025d2a342dda1f5ca118"
+  version "5.1.5"
+  sha256 arm:   "c982581fcc69cfa273d16c783cb5918bd6278589f8ff4cc07f7b29e5eb410700",
+         intel: "e088807dd78ba98756ab91b09d274cc08c5847a0bb5c70fe9aaad6196b056ead"
 
   url "https://github.com/Arylmera/Token-Dashboard/releases/download/v#{version}/Token.Dashboard_#{version}_#{arch}.dmg"
   name "Token Dashboard"
